@@ -1,0 +1,119 @@
+@ASP.NETCoreAPI_HostAddress = http://localhost:5251
+
+
+GET {{ASP.NETCoreAPI_HostAddress}}/
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/greeting?name=testes
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/math/sum/5/5
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/math/sum/-5/4
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/math/sub/55/10
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/math/med/40/10
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/math/div/100/0
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/math/square-root/-4
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/person
+Accept: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/person/2
+Accept: application/json
+
+###
+POST {{ASP.NETCoreAPI_HostAddress}}/person
+Content-Type: application/json
+
+{
+  "FirstName": "Novo usuário",
+  "LastName": "Sobrenome asdasdasdasda",
+  "Address": "Rua Fulano de tal 321",
+  "Gender": "Male"
+}
+
+###
+PUT {{ASP.NETCoreAPI_HostAddress}}/person
+Content-Type: application/json
+
+{
+  "Id": 3,
+  "FirstName": "UPDATE",
+  "LastName": "Sobrenome",
+  "Address": "Rua Fulano de tal 321",
+  "Gender": "Male"
+}
+
+
+###
+DELETE {{ASP.NETCoreAPI_HostAddress}}/person/2
+Content-Type: application/json
+
+
+
+
+
+### -------------------- ROTAS DE "TO DO"
+GET {{ASP.NETCoreAPI_HostAddress}}/todoitem?page=2&size=10
+Content-Type: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/todoitem/1
+Content-Type: application/json
+
+
+### 
+GET {{ASP.NETCoreAPI_HostAddress}}/todoitem?title=Tarefa+1
+Content-Type: application/json
+
+
+
+###
+POST {{ASP.NETCoreAPI_HostAddress}}/todoitem/
+Content-Type: application/json
+
+{
+  "Title" : "Tarefa999",
+  "Description" : "Tarefa999: fazer as tarefas de hoje333...",
+  "IsDone" : false
+}
+
+
+
+
+###
+PATCH {{ASP.NETCoreAPI_HostAddress}}/todoitem/
+Content-Type: application/json
+
+{
+  "Id" : 2,
+  "IsDone" : false
+}
+
+
+###
+DELETE {{ASP.NETCoreAPI_HostAddress}}/todoitem/1
+Content-Type: application/json
