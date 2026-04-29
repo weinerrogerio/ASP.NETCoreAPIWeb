@@ -19,10 +19,12 @@ namespace ASP.NETCoreAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(
+            [FromQuery] int page = 1,
+            [FromQuery] int size = 10)
         {
             _logger.LogInformation("Buscando todas as pessoas");
-            var persons = _personServices.FindAll();
+            var persons = _personServices.FindAll(page, size);
             if ( persons == null ) {
                 _logger.LogWarning("Nenhuma pessoa encontrada");
                 return NotFound();

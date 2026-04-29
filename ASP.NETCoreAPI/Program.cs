@@ -1,5 +1,7 @@
 using ASP.NETCoreAPI.Configurations;
 using ASP.NETCoreAPI.Models.Context;
+using ASP.NETCoreAPI.Repositories;
+using ASP.NETCoreAPI.Repositories.Implementations;
 using ASP.NETCoreAPI.Services;
 using ASP.NETCoreAPI.Services.Implementations;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +16,7 @@ builder.Services.AddSingleton<IMathService, MathService>();
 builder.Services.AddScoped<IPersonServices, PersonServicesImpl>();
 builder.Services.AddScoped<IMessageServices, MessageServicesImpl>();
 builder.Services.AddScoped<ITodoItemServices, TodoItemServicesImpl>();
+builder.Services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
 
 //Configurando o logging
 builder.AddSerilogLogging();
