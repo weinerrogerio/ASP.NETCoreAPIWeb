@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ASP.NETCoreAPI.Models.Mappings;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASP.NETCoreAPI.Models.Context
 {
@@ -8,6 +9,14 @@ namespace ASP.NETCoreAPI.Models.Context
 
         public DbSet<Person> Persons { get; set; }
         public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<Books> Books { get; set; }
 
+        // Configurações adicionais para o modelo
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            // Configurações para a entidade Books - mapeamento para a tabela "Books" (populando dados iniciais)
+            modelBuilder.ApplyConfiguration(new BooksConfiguration());
+        }
     }
 }

@@ -59,3 +59,12 @@ Compila e executa o projeto Web API recém-criado. Após alguns segundos, o term
 
 
 #
+### Observações
+Console do Gerenciador de Pacotes:
+- Install-Package AutoMapper
+- Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+Ferramentas (Tools) > Linha de Comando (Command Line) > 
+Prompt de Comando do Desenvolvedor (Developer Command Prompt) ou PowerShell do Desenvolvedor.
+- dotnet add package AutoMapper
+- dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection

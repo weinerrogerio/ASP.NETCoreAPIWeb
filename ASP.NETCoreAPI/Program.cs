@@ -5,6 +5,7 @@ using ASP.NETCoreAPI.Repositories.Implementations;
 using ASP.NETCoreAPI.Services;
 using ASP.NETCoreAPI.Services.Implementations;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,15 @@ builder.Services.AddScoped<IPersonServices, PersonServicesImpl>();
 builder.Services.AddScoped<IMessageServices, MessageServicesImpl>();
 builder.Services.AddScoped<ITodoItemServices, TodoItemServicesImpl>();
 builder.Services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
+builder.Services.AddScoped<IBookServices, BooksServicesImpl>();
+
+// Registro do mapeamento do AutoMapper para a versão 16+
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<ASP.NETCoreAPI.Profiles.MappingProfile>();
+});
+
+
 
 //Configurando o logging
 builder.AddSerilogLogging();

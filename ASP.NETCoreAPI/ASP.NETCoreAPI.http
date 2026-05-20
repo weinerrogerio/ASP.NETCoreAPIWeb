@@ -117,3 +117,37 @@ Content-Type: application/json
 ###
 DELETE {{ASP.NETCoreAPI_HostAddress}}/todoitem/1
 Content-Type: application/json
+
+
+
+### -------------------- ROTAS DE "BOOKS"
+GET {{ASP.NETCoreAPI_HostAddress}}/book?page=1&size=20
+Content-Type: application/json
+
+###
+GET {{ASP.NETCoreAPI_HostAddress}}/book/1
+Content-Type: application/json
+
+
+###
+POST {{ASP.NETCoreAPI_HostAddress}}/book
+Content-Type: application/json
+{  
+  "Title" : "Livro Teste",
+  "Author" : "Autor Teste",
+  "Price" : 19.99,
+  "Launch_date" : "2024-06-01T00:00:00"
+}
+
+
+###
+PATCH {{ASP.NETCoreAPI_HostAddress}}/book
+Content-Type: application/json
+{
+  "Id" : 16,
+  "Title": "Livro Teste Atualizado"
+}
+
+###
+DELETE {{ASP.NETCoreAPI_HostAddress}}/book/1
+Content-Type: application/json

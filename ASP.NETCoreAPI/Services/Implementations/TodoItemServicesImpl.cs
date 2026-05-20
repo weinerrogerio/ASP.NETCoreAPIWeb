@@ -69,7 +69,6 @@ namespace ASP.NETCoreAPI.Services.Implementations
 
                 existingItem.IsDone = dto.IsDone.Value;
             }
-
             _context.SaveChanges();
             return existingItem;
         }

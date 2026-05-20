@@ -26,7 +26,7 @@ namespace ASP.NETCoreAPI.Controllers
             [FromQuery] int page = 1, 
             [FromQuery] int size = 10)
         {
-            Console.WriteLine($"Enviando todos os itens ${title} e ${isDone}");
+            //Console.WriteLine($"Enviando todos os itens ${title} e ${isDone}");
             var item = _todoItemServices.FindAll(title, isDone, page, size);
             if ( item == null || item.Count == 0 ) return NotFound("Tasks not found");
             return Ok(item);
