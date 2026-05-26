@@ -1,4 +1,5 @@
 ﻿using ASP.NETCoreAPI.Models;
+using ASP.NETCoreAPI.Models.Dto;
 using ASP.NETCoreAPI.Repositories;
 
 namespace ASP.NETCoreAPI.Services.Implementations
@@ -7,12 +8,14 @@ namespace ASP.NETCoreAPI.Services.Implementations
     {
        
         //injeção de dependência
-        private readonly IPersonRepository _repository;
+        private readonly IRepository<Person> _repository;
+        private readonly AutoMapper.IMapper _mapper;
 
         //inicializando a injeção...
-        public PersonServicesImpl(IPersonRepository repository)
+        public PersonServicesImpl(IRepository<Person> repository, AutoMapper.IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
 
@@ -31,15 +34,17 @@ namespace ASP.NETCoreAPI.Services.Implementations
             return _repository.Create(person);
         }
 
-        public Person Update(Person person)
+        public Person Update(UpdatePersonDto person)
         {
-
-            return _repository.Update(person);
+            var existingPerson = _repository.FindById(person.Id);
+            if ( existingPerson == null ) return null;
+            _mapper.Map(person, existingPerson);
+            return _repository.Update(existingPerson);
         }
 
-        public bool Delete(long id)
+        public void Delete(long id)
         {
-            return _repository.Delete(id);
+            _repository.Delete(id);
         }
     }
 }

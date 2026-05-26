@@ -8,26 +8,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ASP.NETCoreAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class PopulateBooks : Migration
+    public partial class populate_book : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Books",
-                table: "Books");
-
-            migrationBuilder.RenameTable(
-                name: "Books",
-                newName: "books");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_books",
-                table: "books",
-                column: "id");
-
             migrationBuilder.InsertData(
-                table: "books",
+                table: "book",
                 columns: new[] { "id", "author", "launch_date", "price", "title" },
                 values: new object[,]
                 {
@@ -52,93 +39,80 @@ namespace ASP.NETCoreAPI.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_books",
-                table: "books");
-
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 1L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 2L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 3L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 4L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 5L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 6L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 7L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 8L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 9L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 10L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 11L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 12L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 13L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 14L);
 
             migrationBuilder.DeleteData(
-                table: "books",
+                table: "book",
                 keyColumn: "id",
                 keyValue: 15L);
-
-            migrationBuilder.RenameTable(
-                name: "books",
-                newName: "Books");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Books",
-                table: "Books",
-                column: "id");
         }
     }
 }

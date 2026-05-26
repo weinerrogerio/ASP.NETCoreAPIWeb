@@ -1,4 +1,5 @@
 ﻿using ASP.NETCoreAPI.Models;
+using ASP.NETCoreAPI.Models.Dto;
 
 namespace ASP.NETCoreAPI.Services
 {

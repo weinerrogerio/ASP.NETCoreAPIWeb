@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EditorConfigFiles Remove="C:\Users\Dist-02\ASP.NET Core\ASP.NETCoreAPI\ASP.NETCoreAPI\.editorconfig" />
   </ItemGroup>
 

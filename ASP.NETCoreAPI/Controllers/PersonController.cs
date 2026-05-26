@@ -1,4 +1,5 @@
 ﻿using ASP.NETCoreAPI.Models;
+using ASP.NETCoreAPI.Models.Dto;
 using ASP.NETCoreAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -58,8 +59,8 @@ namespace ASP.NETCoreAPI.Controllers
         }
 
         //atualizar
-        [HttpPut]
-        public IActionResult Put([FromBody] Person person)
+        [HttpPatch]
+        public IActionResult Patch([FromBody] UpdatePersonDto person)
         {
             _logger.LogInformation("Atualizando a pessoa com ID: {id}", person.Id);
             var personUpdated = _personServices.Update(person);

@@ -1,4 +1,5 @@
 ﻿using ASP.NETCoreAPI.Models;
+using ASP.NETCoreAPI.Models.Dto;
 using ASP.NETCoreAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +34,7 @@ namespace ASP.NETCoreAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Books book)
+        public IActionResult Create([FromBody] Book book)
         {
             var createdBook = _bookService.Create(book);
             if (createdBook == null) return BadRequest("Book not created: Invalid or incomplete data");
@@ -51,9 +52,8 @@ namespace ASP.NETCoreAPI.Controllers
 
         [HttpDelete("{id}")]
         public IActionResult Delete(long id) {
-            var deletedBook = _bookService.Delete(id);
-            if (deletedBook == false) return BadRequest("Book not deleted: Invalid or incomplete data");
-            return Ok(deletedBook);
+            _bookService.Delete(id);
+            return NoContent();
         }
     }
 }

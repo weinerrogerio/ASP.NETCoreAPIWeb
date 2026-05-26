@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ASP.NETCoreAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class create_table_books : Migration
+    public partial class create_table_book : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,7 +23,7 @@ namespace ASP.NETCoreAPI.Migrations
                 oldMaxLength: 400);
 
             migrationBuilder.CreateTable(
-                name: "Books",
+                name: "book",
                 columns: table => new
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
@@ -35,7 +35,7 @@ namespace ASP.NETCoreAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.id);
+                    table.PrimaryKey("PK_book", x => x.id);
                 });
         }
 
@@ -43,7 +43,7 @@ namespace ASP.NETCoreAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Books");
+                name: "book");
 
             migrationBuilder.AlterColumn<string>(
                 name: "description",

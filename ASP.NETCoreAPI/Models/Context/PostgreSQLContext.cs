@@ -9,7 +9,7 @@ namespace ASP.NETCoreAPI.Models.Context
 
         public DbSet<Person> Persons { get; set; }
         public DbSet<TodoItem> TodoItems { get; set; }
-        public DbSet<Books> Books { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         // Configurações adicionais para o modelo
         protected override void OnModelCreating(ModelBuilder modelBuilder)

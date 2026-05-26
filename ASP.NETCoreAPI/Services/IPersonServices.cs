@@ -1,4 +1,5 @@
 ﻿using ASP.NETCoreAPI.Models;
+using ASP.NETCoreAPI.Models.Dto;
 
 namespace ASP.NETCoreAPI.Services
 {
@@ -7,8 +8,8 @@ namespace ASP.NETCoreAPI.Services
         Person Create(Person person);
         Person FindById(long id);
         List<Person> FindAll(int page, int pageSize);
-        Person Update(Person person);
-        bool Delete(long id);
+        Person Update(UpdatePersonDto person);
+        void Delete(long id);
 
     }
 }

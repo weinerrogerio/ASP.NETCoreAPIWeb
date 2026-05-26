@@ -2,11 +2,11 @@
 {
     public static class BookSeed
     {
-        public static List<Books> GetPredefinedBooks()
+        public static List<Book> GetPredefinedBooks()
         {
-            return new List<Books>()
+            return new List<Book>()
             {   
-                new Books
+                new Book
                 {
                     Id = 1,
                     Author = "Michael C. Feathers",
@@ -15,7 +15,7 @@
                     Title = "Working Effectively with Legacy Code"
 
                 },
-                new Books
+                new Book
                 {
                     Id = 2,
                     Author = "Ralph Johnson, Erich Gamma, John Vlissides, Richard Helm",
@@ -23,7 +23,7 @@
                     Price = 45.00m,
                     Title = "Design Patterns: Elements of Reusable Object-Oriented Software"
                 },
-                new Books
+                new Book
                 {
                     Id = 3,
                     Author = "Robert C. Martin",
@@ -31,7 +31,7 @@
                     Price = 77.00m,
                     Title = "Clean Code: A Handbook of Agile Software Craftsmanship"
                 },
-                new Books
+                new Book
                 {
                     Id = 4,
                     Author = "Douglas Crockford",
@@ -39,7 +39,7 @@
                     Price = 67.00m,
                     Title = "JavaScript: The Good Parts"
                 },
-                new Books
+                new Book
                 {
                     Id = 5,
                     Author = "Steve McConnell",
@@ -47,7 +47,7 @@
                     Price = 58.00m,
                     Title = "Code Complete (2nd Edition)"
                 },
-                new Books
+                new Book
                 {
                     Id = 6,
                     Author = "Martin Fowler, Kent Beck",
@@ -55,7 +55,7 @@
                     Price = 88.00m,
                     Title = "Refactoring: Improving the Design of Existing Code"
                 },
-                new Books
+                new Book
                 {
                     Id = 7,
                     Author = "Eric Freeman, Elisabeth Freeman, Kathy Sierra, Bert Bates",
@@ -63,7 +63,7 @@
                     Price = 110.00m,
                     Title = "Head First Design Patterns"
                 },
-                new Books
+                new Book
                 {
                     Id = 8,
                     Author = "Eric Evans",
@@ -71,7 +71,7 @@
                     Price = 92.00m,
                     Title = "Domain-Driven Design: Tackling Complexity in the Heart of Software"
                 },
-                new Books
+                new Book
                 {
                     Id = 9,
                     Author = "Brian Goetz, Tim Peierls",
@@ -79,7 +79,7 @@
                     Price = 80.00m,
                     Title = "Java Concurrency in Practice"
                 },
-                new Books
+                new Book
                 {
                     Id = 10,
                     Author = "Susan Cain",
@@ -87,7 +87,7 @@
                     Price = 123.00m,
                     Title = "Quiet: The Power of Introverts in a World That Can''t Stop Talking"
                 },
-                new Books
+                new Book
                 {
                     Id = 11,
                     Author = "Roger S. Pressman",
@@ -95,7 +95,7 @@
                     Price = 56.00m,
                     Title = "Software Engineering: A Practitioner''s Approach (7th Edition)"
                 },
-                new Books
+                new Book
                 {
                     Id = 12,
                     Author = "Viktor Mayer-Schonberger, Kenneth Kukier",
@@ -103,7 +103,7 @@
                     Price = 54.00m,
                     Title = "Big Data: A Revolution That Will Transform How We Live, Work, and Think"
                 },
-                new Books
+                new Book
                 {
                     Id = 13,
                     Author = "Richard Hunter, George Westerman",
@@ -111,7 +111,7 @@
                     Price = 95.00m,
                     Title = "The Real Business of IT: How CIOs Create and Communicate Value"
                 },
-                new Books
+                new Book
                 {
                     Id = 14,
                     Author = "Aguinaldo Aragon Fernandes, Vladimir Ferraz de Abreu",
@@ -119,7 +119,7 @@
                     Price = 54.00m,
                     Title = "Implementing IT Governance: A Practical Guide to Global Best Practices in IT Management"
                 },
-                new Books
+                new Book
                 {
                     Id = 15,
                     Author = "Marc J. Schiller",

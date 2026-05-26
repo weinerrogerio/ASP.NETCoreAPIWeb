@@ -2,6 +2,8 @@
 using ASP.NETCoreAPI.Models.Context;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using AutoMapper;
+using ASP.NETCoreAPI.Repositories;
+using ASP.NETCoreAPI.Models.Dto;
 
 
 namespace ASP.NETCoreAPI.Services.Implementations
@@ -9,65 +11,46 @@ namespace ASP.NETCoreAPI.Services.Implementations
     public class BooksServicesImpl : IBookServices
     {
 
-        //injeção de dependência
-        private readonly PostgreSQLContext _context;
+        //injeção de dependência        
+        private readonly IRepository<Book> _repository;
         private readonly AutoMapper.IMapper _mapper;
 
 
+
         //inicializando a injeção...
-        public BooksServicesImpl(PostgreSQLContext context, AutoMapper.IMapper mapper)
+        public BooksServicesImpl(IRepository<Book> bookRepository, AutoMapper.IMapper mapper)
         {
-            _context = context;
-            _mapper = mapper;        
+            _repository = bookRepository;
+            _mapper = mapper;
         }
 
-        public Books FindById(long id)
+        public Book FindById(long id)
         {
-           var data = _context.Books.Find(id);
-            if ( data != null )
-            {
-                return data;
-            }
-            return data;
+            return _repository.FindById(id);
         }
 
-        public List<Books> FindAll(int page, int pageSize)
+        public List<Book> FindAll(int page, int pageSize)
         {
-            return _context.Books.Skip(( page - 1 ) * pageSize).Take(pageSize).ToList();
+            return _repository.FindAll(page, pageSize);
         }
-        
 
-        public Books Create(Books book)
+        public Book Create(Book book)
         {
             if ( book == null ) return null;         
-            _context.Books.Add(book);
-            _context.SaveChanges();
-            return book;            
+            return _repository.Create(book);
         }
         
-        public Books Update(UpdateBooksDto book)
+        public Book Update(UpdateBooksDto book)
         {
-            if ( book == null ) throw new NullReferenceException(nameof(book));
-
-            var existingBook = _context.Books.Find(book.Id);
+            var existingBook = _repository.FindById(book.Id);
             if ( existingBook == null ) return null;
-
-            // usando AutoMapper, substituindo todos os 50 ifs possíveis por 1 linha:
             _mapper.Map(book, existingBook);
-            //_context.Entry(existingBook).CurrentValues.SetValues(book);
-
-            _context.SaveChanges();
-
-            return existingBook;           
+            return _repository.Update(existingBook);
         }
 
-        public bool Delete(long id)
+        public void Delete(long id)
         {
-            var existingBook = _context.Books.Find(id);
-            if ( existingBook == null ) return false;
-            _context.Books.Remove(existingBook);
-            _context.SaveChanges();
-            return true;
+            _repository.Delete(id);  
         }          
     }
 }

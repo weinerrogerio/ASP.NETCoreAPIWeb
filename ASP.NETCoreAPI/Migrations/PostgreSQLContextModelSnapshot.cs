@@ -22,7 +22,7 @@ namespace ASP.NETCoreAPI.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ASP.NETCoreAPI.Models.Books", b =>
+            modelBuilder.Entity("ASP.NETCoreAPI.Models.Book", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace ASP.NETCoreAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("books");
+                    b.ToTable("book", (string)null);
 
                     b.HasData(
                         new

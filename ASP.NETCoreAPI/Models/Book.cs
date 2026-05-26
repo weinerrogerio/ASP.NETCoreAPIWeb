@@ -1,15 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ASP.NETCoreAPI.Models.Base;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ASP.NETCoreAPI.Models
 {
-    [Table("books")]
-    public class Books
-    {
-        [Key]
-        [Column("id")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+    [Table("book")]
+    public class Book : BaseEntity
+    {        
 
         [Required(ErrorMessage = "Title is required")]
         [Column("title")]

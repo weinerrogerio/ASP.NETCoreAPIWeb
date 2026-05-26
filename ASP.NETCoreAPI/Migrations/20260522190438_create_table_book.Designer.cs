@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ASP.NETCoreAPI.Migrations
 {
     [DbContext(typeof(PostgreSQLContext))]
-    [Migration("20260506192055_create_table_books")]
-    partial class create_table_books
+    [Migration("20260522190438_create_table_book")]
+    partial class create_table_book
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace ASP.NETCoreAPI.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ASP.NETCoreAPI.Models.Books", b =>
+            modelBuilder.Entity("ASP.NETCoreAPI.Models.Book", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace ASP.NETCoreAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.ToTable("book");
                 });
 
             modelBuilder.Entity("ASP.NETCoreAPI.Models.Person", b =>

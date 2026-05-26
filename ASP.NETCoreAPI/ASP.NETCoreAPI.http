@@ -56,22 +56,19 @@ Content-Type: application/json
 }
 
 ###
-PUT {{ASP.NETCoreAPI_HostAddress}}/person
+PATCH {{ASP.NETCoreAPI_HostAddress}}/person
 Content-Type: application/json
-
 {
-  "Id": 3,
-  "FirstName": "UPDATE",
-  "LastName": "Sobrenome",
-  "Address": "Rua Fulano de tal 321",
-  "Gender": "Male"
+  "Id": 1,
+  "LastName": "Sobrenome Fulano"  
 }
 
 
 ###
-DELETE {{ASP.NETCoreAPI_HostAddress}}/person/2
+DELETE {{ASP.NETCoreAPI_HostAddress}}/person/1
 Content-Type: application/json
 
+### -------------------- Fim rotas de "PERSON"
 
 
 
@@ -101,9 +98,6 @@ Content-Type: application/json
   "IsDone" : false
 }
 
-
-
-
 ###
 PATCH {{ASP.NETCoreAPI_HostAddress}}/todoitem/
 Content-Type: application/json
@@ -125,7 +119,7 @@ GET {{ASP.NETCoreAPI_HostAddress}}/book?page=1&size=20
 Content-Type: application/json
 
 ###
-GET {{ASP.NETCoreAPI_HostAddress}}/book/1
+GET {{ASP.NETCoreAPI_HostAddress}}/book/16
 Content-Type: application/json
 
 
@@ -149,5 +143,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{ASP.NETCoreAPI_HostAddress}}/book/1
+DELETE {{ASP.NETCoreAPI_HostAddress}}/book/16
 Content-Type: application/json
