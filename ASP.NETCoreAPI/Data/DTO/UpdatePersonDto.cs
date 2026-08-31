@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ASP.NETCoreAPI.Models.Dto
+namespace ASP.NETCoreAPI.Data.DTO
 {
     public class UpdatePersonDto
     {

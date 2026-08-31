@@ -1,5 +1,5 @@
-﻿using ASP.NETCoreAPI.Models;
-using ASP.NETCoreAPI.Models.Dto;
+﻿using ASP.NETCoreAPI.Data.DTO;
+using ASP.NETCoreAPI.Models;
 using AutoMapper;
 
 namespace ASP.NETCoreAPI.Profiles

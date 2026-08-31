@@ -36,6 +36,9 @@ Accept: application/json
 GET {{ASP.NETCoreAPI_HostAddress}}/math/square-root/-4
 Accept: application/json
 
+
+### --------------------------------------------------------- ROTAS DE "PERSON"
+
 ###
 GET {{ASP.NETCoreAPI_HostAddress}}/person
 Accept: application/json
@@ -59,8 +62,8 @@ Content-Type: application/json
 PATCH {{ASP.NETCoreAPI_HostAddress}}/person
 Content-Type: application/json
 {
-  "Id": 1,
-  "LastName": "Sobrenome Fulano"  
+  "Id": 2,
+  "LastName": "Sobrenome Fulano 2"  
 }
 
 
@@ -138,7 +141,7 @@ Content-Type: application/json
 PATCH {{ASP.NETCoreAPI_HostAddress}}/book
 Content-Type: application/json
 {
-  "Id" : 16,
+  "Id" : 17,
   "Title": "Livro Teste Atualizado"
 }
 

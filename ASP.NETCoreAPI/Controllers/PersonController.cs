@@ -1,5 +1,5 @@
-﻿using ASP.NETCoreAPI.Models;
-using ASP.NETCoreAPI.Models.Dto;
+﻿using ASP.NETCoreAPI.Data.DTO;
+using ASP.NETCoreAPI.Models;
 using ASP.NETCoreAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -47,7 +47,7 @@ namespace ASP.NETCoreAPI.Controllers
 
         //criar
         [HttpPost]
-        public IActionResult Post([FromBody] Person person)
+        public IActionResult Post([FromBody] PersonDTO person)
         {
             _logger.LogInformation("Criando uma nova pessoa: {fistName}", person.FirstName);
             var personCreated = _personServices.Create(person);

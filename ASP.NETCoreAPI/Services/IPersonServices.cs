@@ -1,14 +1,14 @@
-﻿using ASP.NETCoreAPI.Models;
-using ASP.NETCoreAPI.Models.Dto;
+﻿using ASP.NETCoreAPI.Data.DTO;
+using ASP.NETCoreAPI.Models;
 
 namespace ASP.NETCoreAPI.Services
 {
     public interface IPersonServices
     {
-        Person Create(Person person);
-        Person FindById(long id);
-        List<Person> FindAll(int page, int pageSize);
-        Person Update(UpdatePersonDto person);
+        PersonDTO Create(PersonDTO person);
+        PersonDTO FindById(long id);
+        List<PersonDTO> FindAll(int page, int pageSize);
+        PersonDTO Update(UpdatePersonDto person);
         void Delete(long id);
 
     }

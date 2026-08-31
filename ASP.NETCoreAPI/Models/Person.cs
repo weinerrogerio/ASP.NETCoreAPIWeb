@@ -27,5 +27,9 @@ namespace ASP.NETCoreAPI.Models
         [Column("gender", TypeName = "varchar(6)")]
         public string Gender { get; set; }
 
+
+        [Column("birthday", TypeName = "date")]
+        public DateTime? Birthday { get; set; }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ASP.NETCoreAPI.Models.Dto
+﻿namespace ASP.NETCoreAPI.Data.DTO
 {
     public class UpdateTodoItemDto
     {

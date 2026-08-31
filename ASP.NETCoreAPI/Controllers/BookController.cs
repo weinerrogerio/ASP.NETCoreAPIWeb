@@ -1,5 +1,5 @@
-﻿using ASP.NETCoreAPI.Models;
-using ASP.NETCoreAPI.Models.Dto;
+﻿using ASP.NETCoreAPI.Data.DTO;
+using ASP.NETCoreAPI.Models;
 using ASP.NETCoreAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +34,7 @@ namespace ASP.NETCoreAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Book book)
+        public IActionResult Create([FromBody] BookDTO book)
         {
             var createdBook = _bookService.Create(book);
             if (createdBook == null) return BadRequest("Book not created: Invalid or incomplete data");

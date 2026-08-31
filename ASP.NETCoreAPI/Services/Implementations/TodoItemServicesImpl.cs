@@ -1,6 +1,6 @@
-﻿using ASP.NETCoreAPI.Models;
+﻿using ASP.NETCoreAPI.Data.DTO;
+using ASP.NETCoreAPI.Models;
 using ASP.NETCoreAPI.Models.Context;
-using ASP.NETCoreAPI.Models.Dto;
 
 namespace ASP.NETCoreAPI.Services.Implementations
 {

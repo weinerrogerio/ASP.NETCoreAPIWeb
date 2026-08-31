@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="ASP.NETCoreAPI.Tests/ASP.NETCoreAPI.Tests.csproj" Id="54453945-495e-4c17-a320-52853d0da0be" />
   <Project Path="ASP.NETCoreAPI/ASP.NETCoreAPI.csproj" />
 </Solution>
